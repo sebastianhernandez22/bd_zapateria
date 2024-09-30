@@ -14,7 +14,7 @@
 
     // Consulta a la base de datos
     $consulta = "SELECT nombre_usuario, correo_usuario, password_usuario, COUNT(*)
-    AS contar FROM Usuario WHERE correo_usuario = '$usuario' AND password_usuario '$clave'";
+    AS contar FROM Usuario WHERE correo_usuario = '$usuario' AND password_usuario = '$clave'";
 
     // Ejecutar la consulta
     $ejecucion_consulta = mysqli_query($conexion, $consulta) or trigger_error("Error en la consulta a la BD: ".mysqli_error($conexion));
@@ -25,7 +25,7 @@
     if($resultado['contar']>0)
     {
         $_SESSION['username'] = $usuario;
-        heder("location ../pagina_principal.php");
+        header("location ../pagina_principal.php");
     }
     else
     {

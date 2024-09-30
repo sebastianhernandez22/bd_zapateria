@@ -5,10 +5,10 @@
 
 <?php
     //Parametros de conexion a la BD
-    //DEFINE('USER', 'root');
-    //DEFINE('PW', '');
-    //DEFINE('HOST', 'localhost');
-    //DEFINE('BD', 'bd_zapatería');
+    DEFINE('USER', 'root');
+    DEFINE('PW', '');
+    DEFINE('HOST', 'localhost');
+    DEFINE('BD', 'bd_zapatería');
 
     //conexión a la BD
     //$conexion = mysqli_connect(HOST, USER, PW, BD);
@@ -18,13 +18,13 @@
     //mysqli_set_charset($conexion, "utf8mb4");
 
     //verificamos la conexion con la BD
-    if($conexion)
+    if(!$conexion)
     {
-        die("La conexión a la BD falló: " + mysqli_error($conexion));
+        die("La conexión a la BD falló: ". mysqli_error($conexion));
     }
-    else
+    /*else
     {
         die("conexion exitosa a la BD");
-    }
+    }*/
 
 ?>
